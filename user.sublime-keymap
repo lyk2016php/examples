@@ -1,0 +1,5 @@
+[
+   { "keys": ["super+shift+r"], "command": "reindent" , "args": {"single_line": false}},
+   { "keys": ["ctrl+j"], "command": "join_lines" },
+   { "keys": ["alt+tab"], "command": "unindent" }
+]
