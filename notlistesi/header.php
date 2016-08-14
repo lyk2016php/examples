@@ -24,6 +24,16 @@
 					<ul class="nav navbar-nav">
 						<li><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Ana Sayfa</a></li>
 					</ul>
+					<? if(isset($_COOKIE['username'])): ?>
+					<p class="navbar-text navbar-right">Merhaba <em><?=$_COOKIE['username']?></em> <a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a></p>
+					<? else: ?>
+					<form class="navbar-form navbar-right" action="login.php" method="post">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Adınız" name="username">
+						</div>
+						<button type="submit" class="btn btn-default">Giriş</button>
+					</form>
+					<? endif; ?>
 					<form class="navbar-form navbar-right" role="search">
 						<a href="add.php" class="btn btn-primary"><i class="fa fa-plus-square" aria-hidden="true"></i> Sınav Sonucu Ekle</a>
 					</form>
