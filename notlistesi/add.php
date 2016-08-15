@@ -1,6 +1,6 @@
 <?php
-
 require_once "init.php";
+girisYapmadiysaGiriseYonlendir();
 
 if(isset($_POST['form'])):
 	if($_POST['form']=="2"):

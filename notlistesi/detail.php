@@ -1,5 +1,6 @@
 <?php
 require_once "init.php";
+girisYapmadiysaGiriseYonlendir();
 
 if(!isset($_GET['exam'])) die("Hangi sınav?");
 if(!isset($sinavlar[$_GET['exam']])) die("Sen de sınav mısın?");

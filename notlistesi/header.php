@@ -24,8 +24,8 @@
 					<ul class="nav navbar-nav">
 						<li><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Ana Sayfa</a></li>
 					</ul>
-					<? if(isset($_COOKIE['username'])): ?>
-					<p class="navbar-text navbar-right">Merhaba <em><?=$_COOKIE['username']?></em> <a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a></p>
+					<? if(isset($_SESSION['username'])): ?>
+					<p class="navbar-text navbar-right">Merhaba <em><?=$_SESSION['username']?></em> <a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a></p>
 					<? else: ?>
 					<form class="navbar-form navbar-right" action="login.php" method="post">
 						<div class="form-group">

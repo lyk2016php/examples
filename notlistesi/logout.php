@@ -1,5 +1,7 @@
 <?php
+session_start();
 
-setcookie("username", "", time()-100);
+// session'ı sonlandıralım
+session_destroy();
 
 header("Location: index.php");

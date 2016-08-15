@@ -1,4 +1,8 @@
-<?php require "header.php" ?>
+<?php 
+require_once "init.php";
+girisYapmadiysaGiriseYonlendir();
+require "header.php";
+?>
 
 <div class="list-group">
 

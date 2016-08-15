@@ -5,6 +5,13 @@ fclose($jsonDosyasi);
 
 $sinavlar = json_decode($sinavlarJson, true);
 
+// yetkili kullanıcıları da ayrı bir dizi içinde tutuyoruz
+$yetkiliKullanicilar = array(
+	"ugur" => "123",
+	"hakan" => "321"
+	);
+
+
 /*
 $sinavlar = array(
 	"MAT1" => array(

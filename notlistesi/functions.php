@@ -7,3 +7,13 @@ function notunHarfKarsiligi($fonksiyonIcindekiNot){
 	if($fonksiyonIcindekiNot>=45) return "D";
 	return "E";
 }
+
+function girisYapmadiysaGiriseYonlendir(){
+	if(!isset($_SESSION['username']))
+		header("Location: login.php");
+}
+
+function girisYaptiysaAnaSayfayaYonlendir(){
+	if(isset($_SESSION['username']))
+		header("Location: index.php");
+}
