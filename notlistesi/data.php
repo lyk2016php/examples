@@ -7,8 +7,8 @@ $sinavlar = json_decode($sinavlarJson, true);
 
 // yetkili kullanıcıları da ayrı bir dizi içinde tutuyoruz
 $yetkiliKullanicilar = array(
-	"ugur" => "123",
-	"hakan" => "321"
+	"ugur" => "202cb962ac59075b964b07152d234b70",
+	"hakan" => "caf1a3dfb505ffed0d024130f58c5cfa"
 	);
 
 

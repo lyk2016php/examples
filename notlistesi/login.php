@@ -7,7 +7,7 @@ if(isset($_POST['username']) && isset($_POST['password'])):
 	// gelen kullanıcı adı, yetkili kişilerde tanımlanmış mı diye bakalım
 	if(isset($yetkiliKullanicilar[$_POST['username']])):
 		// girilen parola ile ilgili kullanıcının parolası eşleşiyor mu diye bakalım
-		if($_POST['password']==$yetkiliKullanicilar[$_POST['username']]):
+		if(md5($_POST['password'])==$yetkiliKullanicilar[$_POST['username']]):
 			$_SESSION['username'] = $_POST['username'];
 			header("Location: index.php");
 		// kullanıcı varsa ama şifre uymuyorsa
