@@ -1,4 +1,5 @@
 <?php
+define('sekuri', true);
 require_once "init.php";
 girisYapmadiysaGiriseYonlendir();
 
@@ -8,7 +9,25 @@ if(!isset($sinavlar[$_GET['exam']])) die("Sen de sınav mısın?");
 $sinav = $sinavlar[$_GET['exam']];
 $notlar = $sinavlar[$_GET['exam']]['results'];
 
-if(isset($_GET['sort']) && in_array($_GET['sort'], ['ksort', 'krsort', 'asort', 'arsort'])) $_GET['sort']($notlar);
+if(isset($_GET['sort'])):
+	switch ($_GET['sort']) {
+		case 'name-asc':
+			ksort($notlar);
+			break;
+
+		case 'name-desc':
+			krsort($notlar);
+			break;
+
+		case 'grade-asc':
+			asort($notlar);
+			break;
+
+		case 'grade-desc':
+			arsort($notlar);
+			break;
+	}
+endif;
 
 $enYuksekNot = max($notlar);
 $enDusukNot = min($notlar);
@@ -27,15 +46,15 @@ require "header.php";
 			<th>
 				Öğrenci
 				<div class="btn-group" role="group">
-					<a href="?exam=<?=$_GET['exam']?>&sort=ksort" class="btn btn-default <? if($_GET['sort']=="ksort") echo "btn-primary" ?>"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i></a>
-					<a href="?exam=<?=$_GET['exam']?>&sort=krsort" class="btn btn-default <? if($_GET['sort']=="krsort") echo "btn-primary" ?>"><i class="fa fa-sort-alpha-desc" aria-hidden="true"></i></a>
+					<a href="?exam=<?=$_GET['exam']?>&sort=name-asc" class="btn btn-default <? if($_GET['sort']=="name-asc") echo "btn-primary" ?>"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i></a>
+					<a href="?exam=<?=$_GET['exam']?>&sort=name-desc" class="btn btn-default <? if($_GET['sort']=="name-desc") echo "btn-primary" ?>"><i class="fa fa-sort-alpha-desc" aria-hidden="true"></i></a>
 				</div>
 			</th>
 			<th>
 				Not
 				<div class="btn-group" role="group">
-					<a href="?exam=<?=$_GET['exam']?>&sort=asort" class="btn btn-default <? if($_GET['sort']=="asort") echo "btn-primary" ?>"><i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></a>
-					<a href="?exam=<?=$_GET['exam']?>&sort=arsort" class="btn btn-default <? if($_GET['sort']=="arsort") echo "btn-primary" ?>"><i class="fa fa-sort-numeric-desc" aria-hidden="true"></i></a>
+					<a href="?exam=<?=$_GET['exam']?>&sort=grade-asc" class="btn btn-default <? if($_GET['sort']=="grade-asc") echo "btn-primary" ?>"><i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></a>
+					<a href="?exam=<?=$_GET['exam']?>&sort=grade-desc" class="btn btn-default <? if($_GET['sort']=="grade-desc") echo "btn-primary" ?>"><i class="fa fa-sort-numeric-desc" aria-hidden="true"></i></a>
 				</div>
 			</th>
 			<th>Harf Karşılığı</th>

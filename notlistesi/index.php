@@ -1,4 +1,5 @@
 <?php 
+define('sekuri', true);
 require_once "init.php";
 girisYapmadiysaGiriseYonlendir();
 require "header.php";
