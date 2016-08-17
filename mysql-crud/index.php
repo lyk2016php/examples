@@ -1,4 +1,5 @@
 <meta charset="utf-8">
+<a href="add-student.php">Öğrenci Ekle</a><hr>
 <?php
 
 // PHP üstünde mysql_ fonksiyonlarını kullanarak CRUD (Create, Read, Update, Delete) işlemlerini yapacağımız basit bir sistem oluşturacağız
