@@ -1,0 +1,6 @@
+{
+	"require": {
+		"andrioli/hello-composer": "dev-master",
+		"nesbot/carbon": "^1.21"
+	}
+}
